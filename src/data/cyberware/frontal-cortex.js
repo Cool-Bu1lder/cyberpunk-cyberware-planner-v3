@@ -1,0 +1,80 @@
+export const frontalCortex = [
+  {
+    id: 'axolotl',
+    label: 'Axolotl',
+    capacity: 48,
+    conflicts: ['newton-module'],
+  },
+  {
+    id: 'bioconductor',
+    label: 'Bioconductor',
+    capacity: 16,
+    conflicts: [],
+  },
+  {
+    id: 'cox-2-cybersomatic-optimiser',
+    label: 'COX-2 Cybersomatic Optimiser',
+    capacity: 50,
+    conflicts: [],
+  },
+  {
+    id: 'camillo-ram-manager',
+    label: 'Camillo RAM Manager',
+    capacity: 8,
+    conflicts: [],
+  },
+  {
+    id: 'ex-disk',
+    label: 'Ex-Disk',
+    capacity: 10,
+    conflicts: [],
+  },
+  {
+    id: 'kerenzikov-boost-system',
+    label: 'Kerenzikov Boost System',
+    capacity: 3,
+    conflicts: [],
+  },
+  {
+    id: 'mechatronic-core',
+    label: 'Mechatronic Core',
+    capacity: 5,
+    conflicts: [],
+  },
+  {
+    id: 'memory-boost',
+    label: 'Memory Boost',
+    capacity: 18,
+    conflicts: [],
+  },
+  {
+    id: 'newton-module',
+    label: 'Newton Module',
+    capacity: 14,
+    conflicts: ['axolotl'],
+  },
+  {
+    id: 'quantum-tuner',
+    label: 'Quantum Tuner',
+    capacity: 45,
+    conflicts: [],
+  },
+  {
+    id: 'ram-reallocator',
+    label: 'RAM Reallocator',
+    capacity: 40,
+    conflicts: [],
+  },
+  {
+    id: 'ram-upgrade',
+    label: 'RAM Upgrade',
+    capacity: 8,
+    conflicts: [],
+  },
+  {
+    id: 'self-ice',
+    label: 'Self-ICE',
+    capacity: 5,
+    conflicts: [],
+  },
+]
