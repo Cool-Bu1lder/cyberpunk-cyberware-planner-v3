@@ -1,19 +1,5 @@
-export default function CyberwareContainer({ children }) {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        height: '100%',
-        width: '100%',
+import './CyberwareContainer.css'
 
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '1.5vh',
-        /*background: 'Red',*/
-      }}
-    >
-      {children}
-    </div>
-  )
+export default function CyberwareContainer({ children }) {
+  return <div className="cyberware-container">{children}</div>
 }
