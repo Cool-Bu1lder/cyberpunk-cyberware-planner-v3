@@ -1,4 +1,6 @@
-export default function CategoryContainer({ children }) {
+// TODO: Rename to cyberware container
+
+export default function CategoriesContainer({ children }) {
   return (
     <div
       style={{

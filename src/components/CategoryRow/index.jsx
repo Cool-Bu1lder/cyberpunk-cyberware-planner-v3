@@ -5,7 +5,7 @@ export default function CategoryRow({ children, gap = '1vh' }) {
         display: 'flex',
         justifyContent: 'center',
         gap: gap,
-        /*background: 'Green',*/
+        //background: 'Green'
       }}
     >
       {children}
