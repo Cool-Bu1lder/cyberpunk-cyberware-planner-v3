@@ -1,5 +1,5 @@
+import './CategoryContainer.css'
+
 export default function CategoryContainer({ children }) {
-  return (
-    <div style={{ width: '100%' /*background: 'Purple'*/ }}>{children}</div>
-  )
+  return <div className={'category-container'}>{children}</div>
 }
