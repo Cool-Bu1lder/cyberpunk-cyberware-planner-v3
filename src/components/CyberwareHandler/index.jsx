@@ -1,4 +1,4 @@
-import CategoriesContainer from './CategoriesContainer'
+import CyberwareContainer from './CyberwareContainer'
 import CategoryRow from './CategoryRow'
 import CategoryHandler from './CategoryHandler'
 
@@ -10,7 +10,7 @@ export default function CyberwareHandler({ categories }) {
   const categoryPairs = arrayToChunks(categories, 2)
 
   return (
-    <CategoriesContainer>
+    <CyberwareContainer>
       {categoryPairs.map((pair, rowIndex) => (
         <CategoryRow key={rowIndex} gap={`${categoryGaps[rowIndex]}vh`}>
           {pair.map((category, categoryIndex) => (
@@ -22,6 +22,6 @@ export default function CyberwareHandler({ categories }) {
           ))}
         </CategoryRow>
       ))}
-    </CategoriesContainer>
+    </CyberwareContainer>
   )
 }
