@@ -1,127 +1,41 @@
-import ModelView from './components/ModelView/index.jsx'
+import ModelView from './components/ModelView'
+import CategoryContainer from './components/CategoryContainer'
+import CategoryRow from './components/CategoryRow'
 
-function TestContainer({ children }) {
+import { categories } from './data/categories.js'
+
+import { arrayToChunks } from './utils/array.js'
+
+function Box() {
   return (
     <div
       style={{
-        position: 'fixed',
-        height: '100%',
-        width: '100%',
-
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '1.5vh',
-        /*background: 'Red',*/
+        height: '12vh',
+        width: '30vh',
+        background: 'Orange',
       }}
-    >
-      {children}
-    </div>
-  )
-}
-
-function TestRow({ children, gap = '1vh' }) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: gap,
-        /*background: 'Green',*/
-      }}
-    >
-      {children}
-    </div>
+    />
   )
 }
 
 function App() {
+  const gaps = [25, 40, 55, 25, 25]
+
+  const categoryPairs = arrayToChunks(categories, 2)
+
   return (
     <>
       <ModelView />
 
-      <TestContainer>
-        <TestRow gap="25vh">
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-        </TestRow>
-        <TestRow gap="40vh">
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-        </TestRow>
-        <TestRow gap="55vh">
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-        </TestRow>
-        <TestRow gap="25vh">
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-        </TestRow>
-        <TestRow gap="25vh">
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-          <div
-            style={{
-              height: '12vh',
-              width: '30vh',
-              background: 'Orange',
-            }}
-          />
-        </TestRow>
-      </TestContainer>
+      <CategoryContainer>
+        {categoryPairs.map((pair, rowIndex) => (
+          <CategoryRow key={rowIndex} gap={`${gaps[rowIndex]}vh`}>
+            {pair.map((category) => (
+              <Box key={category.id} category={category} />
+            ))}
+          </CategoryRow>
+        ))}
+      </CategoryContainer>
     </>
   )
 }
