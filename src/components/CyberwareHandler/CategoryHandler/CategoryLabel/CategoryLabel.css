@@ -1,5 +1,7 @@
 .category-label {
   font-size: 2.5vh;
+  color: rgb(255, 44, 83);
+  font-family: Segoe UI Semibold, sans-serif;
 }
 
 .category-label.left {
