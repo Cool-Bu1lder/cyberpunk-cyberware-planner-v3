@@ -1,0 +1,11 @@
+.category-label {
+  font-size: 2.5vh;
+}
+
+.category-label.left {
+  text-align: right;
+}
+
+.category-label.right {
+  text-align: left;
+}
