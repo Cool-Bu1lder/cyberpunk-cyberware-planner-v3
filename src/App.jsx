@@ -35,7 +35,7 @@ function OptionsHandler() {
     <>
       <div className={'options-container'}>
         <div className={'category-selector'}></div>
-        <ListLayout className={'equipped-container'}>
+        <ListLayout gap={'1.5vh'} className={'equipped-container'}>
           <TempBox />
           <TempBox />
           <TempBox />
@@ -65,9 +65,9 @@ function App() {
     <>
       <ModelView />
       <FullScreenContainer>
-        {/*<OptionsHandler />*/}
+        <OptionsHandler />
+        {/*<CyberwareHandler categories={categories} />*/}
 
-        <CyberwareHandler categories={categories} />
         <CyberwareBar now={50} label={50} />
         <ArmourBar now={50} label={50} />
       </FullScreenContainer>
