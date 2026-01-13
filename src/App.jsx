@@ -40,7 +40,12 @@ function OptionsHandler() {
           <TempBox />
           <TempBox />
         </SlotRow>
-        <GridLayout columns={4} className={'items-container'}>
+        <GridLayout
+          columns={4}
+          rowGap={'1.5vh'}
+          columnGap={'1.5vh'}
+          className={'items-container'}
+        >
           <TempBox />
           <TempBox />
           <TempBox />
