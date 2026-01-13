@@ -6,9 +6,9 @@
 }
 
 .category-label.left {
-  text-align: right;
+  text-align: left;
 }
 
 .category-label.right {
-  text-align: left;
+  text-align: right;
 }
