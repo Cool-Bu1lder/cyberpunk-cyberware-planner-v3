@@ -1,6 +1,8 @@
 import CategoryContainer from './CategoryContainer'
-import SlotRow from './SlotRow'
+import SlotRow from '../../SlotRow'
 import CategoryLabel from './CategoryLabel'
+
+import TempBox from '../../TempBox'
 
 function Box() {
   return (
@@ -22,7 +24,7 @@ export default function CategoryHandler({ category, side }) {
       <CategoryLabel isRight={isRight}>{category.label}</CategoryLabel>
       <SlotRow isRight={isRight}>
         {Array.from({ length: category.slots }).map((_, index) => (
-          <Box key={index} />
+          <TempBox key={index} />
         ))}
       </SlotRow>
     </CategoryContainer>
