@@ -1,4 +1,6 @@
 import ModelView from './components/ModelView'
+
+import AppContainer from './components/AppContainer'
 import CyberwareHandler from './components/CyberwareHandler/index.jsx'
 
 import { categories } from './data/categories.js'
@@ -7,7 +9,9 @@ function App() {
   return (
     <>
       <ModelView />
-      <CyberwareHandler categories={categories} />
+      <AppContainer>
+        <CyberwareHandler categories={categories} />
+      </AppContainer>
     </>
   )
 }
