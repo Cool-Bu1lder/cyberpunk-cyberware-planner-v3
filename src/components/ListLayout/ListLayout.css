@@ -1,0 +1,11 @@
+.list-layout {
+  display: flex;
+}
+
+.list-layout.left {
+  justify-content: flex-start;
+}
+
+.list-layout.right {
+  justify-content: flex-end;
+}

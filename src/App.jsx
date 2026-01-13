@@ -3,7 +3,7 @@ import ModelView from './components/ModelView'
 import FullScreenContainer from './components/FullScreenContainer'
 import CyberwareHandler from './components/CyberwareHandler'
 
-import SlotRow from './components/SlotRow'
+import ListLayout from './components/ListLayout'
 import GridLayout from './components/GridLayout'
 import TempBox from './components/TempBox'
 
@@ -35,11 +35,11 @@ function OptionsHandler() {
     <>
       <div className={'options-container'}>
         <div className={'category-selector'}></div>
-        <SlotRow isRight className={'equipped-container'}>
+        <ListLayout className={'equipped-container'}>
           <TempBox />
           <TempBox />
           <TempBox />
-        </SlotRow>
+        </ListLayout>
         <GridLayout
           columns={4}
           rowGap={'1.5vh'}
@@ -65,12 +65,11 @@ function App() {
     <>
       <ModelView />
       <FullScreenContainer>
-        <OptionsHandler />
-        {/*
+        {/*<OptionsHandler />*/}
+
         <CyberwareHandler categories={categories} />
         <CyberwareBar now={50} label={50} />
         <ArmourBar now={50} label={50} />
-        */}
       </FullScreenContainer>
     </>
   )
