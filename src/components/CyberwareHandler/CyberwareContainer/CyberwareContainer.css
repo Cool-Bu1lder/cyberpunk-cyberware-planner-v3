@@ -1,6 +1,9 @@
-.cyberware-container {
-  height: 100%;
+.fill-parent {
+  position: absolute;
+  inset: 0;
+}
 
+.cyberware-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
