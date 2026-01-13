@@ -11,6 +11,7 @@ export default function CyberwareHandler({ categories }) {
 
   return (
     <CyberwareContainer>
+      {/* TODO: Reuse List Layout? CyberwareContainer is a vertical list*/}
       {categoryPairs.map((pair, rowIndex) => (
         <CategoryRow key={rowIndex} gap={`${categoryGaps[rowIndex]}vh`}>
           {pair.map((category, categoryIndex) => (

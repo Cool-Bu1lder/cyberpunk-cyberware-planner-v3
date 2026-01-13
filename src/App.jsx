@@ -65,8 +65,8 @@ function App() {
     <>
       <ModelView />
       <FullScreenContainer>
-        <OptionsHandler />
-        {/*<CyberwareHandler categories={categories} />*/}
+        {/*<OptionsHandler />*/}
+        <CyberwareHandler categories={categories} />
 
         <CyberwareBar now={50} label={50} />
         <ArmourBar now={50} label={50} />
