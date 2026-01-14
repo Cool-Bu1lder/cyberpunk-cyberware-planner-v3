@@ -7,6 +7,8 @@ import ListLayout from './components/ListLayout'
 import GridLayout from './components/GridLayout'
 import TempBox from './components/TempBox'
 
+import { usePage, PageProvider } from './contexts/PageContext'
+
 import { categories } from './data/categories'
 
 import './App.css'
@@ -60,18 +62,27 @@ function OptionsHandler() {
   )
 }
 
+function Pages() {
+  const { page } = usePage()
+  return (
+    <>
+      {page === 'MainMenu' ? (
+        <CyberwareHandler categories={categories} />
+      ) : (
+        <OptionsHandler />
+      )}
+    </>
+  )
+}
+
 function App() {
   return (
     <>
       <ModelView />
       <FullScreenContainer>
-        {/*
-        {page === 'MainMenu' ? (
-          <CyberwareHandler categories={categories} />
-        ) : (
-          <OptionsHandler />
-        )}
-        */}
+        <PageProvider>
+          <Pages />
+        </PageProvider>
 
         <CyberwareBar now={50} label={50} />
         <ArmourBar now={50} label={50} />

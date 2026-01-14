@@ -3,8 +3,12 @@ import ListLayout from '../../ListLayout'
 import CategoryLabel from './CategoryLabel'
 import SlotButton from '../../SlotButton'
 
+import { usePage } from '../../../contexts/PageContext'
+
 export default function CategoryHandler({ category, side }) {
   const isRight = side === 'right'
+
+  const { setPage } = usePage()
 
   return (
     <CategoryContainer>
@@ -12,7 +16,7 @@ export default function CategoryHandler({ category, side }) {
       <CategoryLabel textAlignRight={!isRight}>{category.label}</CategoryLabel>
       <ListLayout justifyContentRight={!isRight} gap={'1.5vh'}>
         {Array.from({ length: category.slots }).map((_, index) => (
-          <SlotButton key={index} onClick={() => console.log('ButtonClick')} />
+          <SlotButton key={index} onClick={() => setPage('Other')} />
         ))}
       </ListLayout>
     </CategoryContainer>
