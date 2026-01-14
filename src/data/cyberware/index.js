@@ -10,14 +10,14 @@ import { integumentarySystem } from './integumentary-system'
 import { legs } from './legs'
 
 export const cyberware = {
-  frontalCortex: frontalCortex,
-  operatingSystem: operatingSystem,
-  arms: arms,
-  face: face,
-  skeleton: skeleton,
-  hands: hands,
-  nervousSystem: nervousSystem,
-  circulatorySystem: circulatorySystem,
-  integumentarySystem: integumentarySystem,
-  legs: legs,
+  a: frontalCortex,
+  b: operatingSystem,
+  c: arms,
+  d: face,
+  e: skeleton,
+  f: hands,
+  g: nervousSystem,
+  h: circulatorySystem,
+  i: integumentarySystem,
+  j: legs,
 }

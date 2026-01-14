@@ -1,18 +1,18 @@
 export const operatingSystem = [
   {
-    id: '0',
+    id: 'a',
     label: 'Item A',
     capacity: 10,
     conflicts: [],
   },
   {
-    id: '1',
+    id: 'b',
     label: 'Item B',
     capacity: 20,
     conflicts: [],
   },
   {
-    id: '2',
+    id: 'c',
     label: 'Item C',
     capacity: 30,
     conflicts: [],
