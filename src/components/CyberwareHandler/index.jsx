@@ -12,6 +12,7 @@ export default function CyberwareHandler({ categories }) {
   return (
     <CyberwareContainer>
       {/* TODO: Reuse List Layout? CyberwareContainer is a vertical list*/}
+      {/* TODO: Or use properties of grid layout if gaps for each row can be set*/}
       {categoryPairs.map((pair, rowIndex) => (
         <CategoryRow key={rowIndex} gap={`${categoryGaps[rowIndex]}vh`}>
           {pair.map((category, categoryIndex) => (
