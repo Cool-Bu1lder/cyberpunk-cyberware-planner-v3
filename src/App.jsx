@@ -7,7 +7,7 @@ import ListLayout from './components/ListLayout'
 import GridLayout from './components/GridLayout'
 import TempBox from './components/TempBox'
 
-import { categories } from './data/categories.js'
+import { categories } from './data/categories'
 
 import './App.css'
 
@@ -65,8 +65,13 @@ function App() {
     <>
       <ModelView />
       <FullScreenContainer>
-        {/*<OptionsHandler />*/}
-        <CyberwareHandler categories={categories} />
+        {/*
+        {page === 'MainMenu' ? (
+          <CyberwareHandler categories={categories} />
+        ) : (
+          <OptionsHandler />
+        )}
+        */}
 
         <CyberwareBar now={50} label={50} />
         <ArmourBar now={50} label={50} />
