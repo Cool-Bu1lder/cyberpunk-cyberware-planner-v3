@@ -35,7 +35,7 @@ export default function CategoryHandler({ category, side }) {
           const item = items[index] // TODO: may be better to pass the data of each equipped item into this component instead of handling data here
 
           return (
-            <SlotButton key={index} onClick={() => setPage('Other')}>
+            <SlotButton key={index} onClick={() => setPage(category.id)}>
               {item ? item.label : 'Empty'}
             </SlotButton>
           )

@@ -21,3 +21,22 @@ export const cyberware = {
   i: integumentarySystem,
   j: legs,
 }
+
+export const cyberwareLookUp = Object.keys(cyberware).reduce(
+  (accumulator, categoryId) => {
+    accumulator[categoryId] = cyberware[categoryId].reduce(
+      (map, obj, index) => {
+        map[obj.id] = {
+          label: obj.label,
+          capacity: obj.capacity,
+          conflicts: obj.conflicts,
+          order: index,
+        }
+        return map
+      },
+      {},
+    )
+    return accumulator
+  },
+  {},
+)

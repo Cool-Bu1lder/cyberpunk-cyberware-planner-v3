@@ -50,3 +50,13 @@ export const categories = [
     slots: 1,
   },
 ]
+
+// https://stackoverflow.com/a/26265095
+export const categoriesLookUp = categories.reduce(function (map, obj, index) {
+  map[obj.id] = {
+    label: obj.label,
+    slots: obj.slots,
+    order: index,
+  }
+  return map
+}, {})
