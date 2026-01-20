@@ -1,8 +1,10 @@
 import ListLayout from '../ListLayout'
 import GridLayout from '../GridLayout'
 import TempBox from '../TempBox'
+import { usePage } from '../../contexts/PageContext'
 
 export default function OptionsHandler() {
+  const { setPage } = usePage()
   return (
     <>
       <div className={'options-container'}>
@@ -28,6 +30,7 @@ export default function OptionsHandler() {
           <TempBox />
         </GridLayout>
       </div>
+      <button onClick={() => setPage('MainMenu')}>Back</button>
     </>
   )
 }
