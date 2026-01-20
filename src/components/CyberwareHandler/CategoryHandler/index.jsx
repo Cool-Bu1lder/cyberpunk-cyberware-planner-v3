@@ -19,9 +19,7 @@ export default function CategoryHandler({ category, side }) {
   const cyberwareCategory = cyberware[category.id]
 
   const cyberwareById = useMemo(() => {
-    return Object.fromEntries(
-      cyberwareCategory.map(item => [item.id, item])
-    );
+    return Object.fromEntries(cyberwareCategory.map((item) => [item.id, item]))
   }, [cyberwareCategory])
 
   const items = slotIds.map((id) => cyberwareById[id]).filter(Boolean)
