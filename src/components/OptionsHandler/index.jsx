@@ -17,6 +17,26 @@ export default function OptionsHandler() {
     (item) => !urlData[page].includes(item.id),
   )
 
+  function equip(itemId) {
+    const searchParams = new URLSearchParams(window.location.search)
+    const currentValues = searchParams.get(page)
+
+    if (currentValues.length >= categoryInfo.slots) return null
+
+    searchParams.set(page, currentValues + itemId)
+    window.history.replaceState(null, '', '?' + searchParams.toString())
+  }
+
+  function unequip(itemId) {
+    const searchParams = new URLSearchParams(window.location.search)
+    const currentValues = searchParams.get(page)
+
+    if (currentValues.length <= 0) return null
+
+    searchParams.set(page, currentValues.replace(itemId, ''))
+    window.history.replaceState(null, '', '?' + searchParams.toString())
+  }
+
   return (
     <>
       <div className={'options-container'}>
@@ -26,7 +46,12 @@ export default function OptionsHandler() {
             const item = cyberwareLookUp[page][urlData[page][index]] // TODO: use cyberware.find instead?
 
             return (
-              <SlotButton key={index}>{item ? item.label : 'Empty'}</SlotButton>
+              <SlotButton
+                key={index}
+                onClick={() => unequip(urlData[page][index])}
+              >
+                {item ? item.label : 'Empty'}
+              </SlotButton>
             )
           })}
         </ListLayout>
@@ -37,7 +62,9 @@ export default function OptionsHandler() {
           className={'items-container'}
         >
           {filteredCyberware.map((item, index) => (
-            <SlotButton key={index}>{item ? item.label : 'Empty'}</SlotButton>
+            <SlotButton key={index} onClick={() => equip(item.id)}>
+              {item ? item.label : 'Empty'}
+            </SlotButton>
           ))}
         </GridLayout>
       </div>
