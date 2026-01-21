@@ -13,9 +13,9 @@ export default function CategoryHandler({ category, side }) {
   const isRight = side === 'right'
 
   const { setPage } = usePage()
-  const data = useData()
+  const [urlData] = useData()
 
-  const slotIds = data[category.id]
+  const slotIds = urlData[category.id]
   const cyberwareCategory = cyberware[category.id]
 
   const cyberwareById = useMemo(() => {

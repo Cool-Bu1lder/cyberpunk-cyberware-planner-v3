@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 const defaultSearch = '?a=&b=&c=&d=&e=&f=&g=&h=&i=&j=' // TODO: create from array of letters
 const defaultSearchParams = new URLSearchParams(defaultSearch)
 const defaultSearchKeys = Array.from(defaultSearchParams.keys())
@@ -14,7 +16,7 @@ function arraysEqual(a, b) {
   return a.length === b.length && a.every((v, i) => v === b[i])
 }
 
-export function useData() {
+export function getData() {
   const searchParams = new URLSearchParams(window.location.search) // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   const urlKeys = Array.from(searchParams.keys())
 
@@ -25,4 +27,9 @@ export function useData() {
   }
 
   return readSearchParams(searchParams)
+}
+
+export function useData() {
+  const [data, setData] = useState(() => getData())
+  return [data, setData]
 }

@@ -1,7 +1,7 @@
 import ListLayout from '../ListLayout'
 import GridLayout from '../GridLayout'
 import { usePage } from '../../contexts/PageContext'
-import { useData } from '../../hooks/useData'
+import { useData, getData } from '../../hooks/useData'
 
 import { categoriesLookUp } from '../../data/categories'
 import { cyberware, cyberwareLookUp } from '../../data/cyberware'
@@ -10,7 +10,7 @@ import SlotButton from '../SlotButton/index.jsx'
 export default function OptionsHandler() {
   const { page, setPage } = usePage()
 
-  const urlData = useData()
+  const [urlData, setUrlData] = useData()
   const categoryInfo = categoriesLookUp[page]
 
   const filteredCyberware = cyberware[page].filter(
@@ -25,6 +25,8 @@ export default function OptionsHandler() {
 
     searchParams.set(page, currentValues + itemId)
     window.history.replaceState(null, '', '?' + searchParams.toString())
+
+    setUrlData(() => getData())
   }
 
   function unequip(itemId) {
@@ -35,6 +37,8 @@ export default function OptionsHandler() {
 
     searchParams.set(page, currentValues.replace(itemId, ''))
     window.history.replaceState(null, '', '?' + searchParams.toString())
+
+    setUrlData(() => getData())
   }
 
   return (
