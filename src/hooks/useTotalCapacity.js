@@ -12,17 +12,6 @@ function getTotalCapacity(data) {
 }
 
 export function useTotalCapacity() {
-  /*const { data } = useData()
-
-  const [capacity, setCapacity] = useState(() => {
-    return getTotalCapacity(data)
-  })
-
-  useEffect(() => {
-    setCapacity(getTotalCapacity(data))
-  }, [data])
-
-  return capacity*/
   const { data } = useData()
   return getTotalCapacity(data)
 }
