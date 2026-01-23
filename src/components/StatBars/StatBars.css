@@ -8,6 +8,33 @@
 
 /* */
 
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 2vh;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  color: black;
+  background: rgb(255, 213, 66);
+  width: 4vh;
+  height: 2.5vh;
+  border-radius: 0.5vh;
+  bottom: 0;
+  right: -15vh;
+  transition: bottom 1000ms ease;
+  box-shadow:
+    0 0 10px rgb(255, 94, 0),
+    0 0 25px rgb(255, 94, 0);
+}
+
+/* */
+
 .tick-groups-layout {
   display: flex;
   flex-direction: column-reverse;
@@ -28,7 +55,7 @@
 
 .tick {
   background: lightgrey;
-  height: 1vh;
+  height: 0.5vh;
   width: 5vh;
   transform-origin: left;
   transition: transform 1000ms ease 500ms;

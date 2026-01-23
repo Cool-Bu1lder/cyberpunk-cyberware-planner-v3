@@ -1,3 +1,5 @@
+import viteLogo from '/vite.svg'
+
 import './StatBars.css'
 
 const groups = 5
@@ -10,7 +12,10 @@ export default function CyberwareBar({ now, label }) {
 
   return (
     <div className="bar-container left vertically-centered">
-      <div>{label}</div>
+      <div className="label" style={{ bottom: `${now - 6}%` }}>
+        {label}
+      </div>
+      <img src={viteLogo} className="logo" alt="Vite logo" />
       <div className="tick-groups-layout">
         {Array.from({ length: groups }).map((_, i) => (
           <div className="tick-row-layout">
