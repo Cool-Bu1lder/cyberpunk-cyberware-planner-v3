@@ -30,8 +30,14 @@
   background: lightgrey;
   height: 1vh;
   width: 5vh;
+  transform-origin: left;
+  transition: transform 1000ms ease 500ms;
 }
 
 .tick.active {
-  background: yellow;
+  background: rgb(255, 213, 66);
 }
+
+.tick.active.first  { transform: scaleX(3); }
+.tick.active.second { transform: scaleX(2); }
+.tick.active.third  { transform: scaleX(1.5); }
