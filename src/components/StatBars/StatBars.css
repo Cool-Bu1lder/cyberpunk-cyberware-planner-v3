@@ -1,8 +1,8 @@
 .bar-container {
-  width: 6vh;
-  height: 60vh;
+  /*width: 6vh;*/
+  /*height: 60vh;*/
 
-  background: black;
+  /*background: black;*/
 }
 
 .bar-container.left {
@@ -13,10 +13,38 @@
   right: 5vw;
 }
 
+/*
 .bar-container .cyberware {
   background: yellow;
 }
+*/
 
 .bar-container .armour {
   background: blue;
+}
+
+/* */
+
+.tick-set {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.3vh;
+}
+
+.tick-group {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5vh;
+}
+
+.tick-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1vh;
+}
+
+.tick {
+  background: lightgrey;
+  height: 1vh;
+  width: 5vh;
 }
