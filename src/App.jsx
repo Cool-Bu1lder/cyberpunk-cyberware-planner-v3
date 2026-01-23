@@ -9,6 +9,7 @@ import { usePage, PageProvider } from './contexts/PageContext'
 import { DataProvider } from './contexts/DataContext'
 import { categories } from './data/categories'
 import { useTotalCapacity } from './hooks/useTotalCapacity'
+import { useTotalArmor } from './hooks/useTotalArmor.js'
 
 import './App.css'
 
@@ -27,14 +28,15 @@ function Pages() {
 
 function Component() {
   const capacity = useTotalCapacity()
+  const armor = useTotalArmor()
   return (
     <>
       <PageProvider>
         <Pages />
       </PageProvider>
 
-      <CyberwareBar now={capacity} label={capacity} />
-      <ArmourBar now={50} label={50} />
+      <CyberwareBar now={(capacity / 500) * 100} label={capacity} />
+      <ArmourBar now={(armor / 1500) * 100} label={armor} />
     </>
   )
 }
