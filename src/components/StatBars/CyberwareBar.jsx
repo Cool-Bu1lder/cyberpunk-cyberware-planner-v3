@@ -29,12 +29,3 @@ export default function CyberwareBar({ now, label }) {
     </div>
   )
 }
-
-/*
-
-<div className="bar-container left vertically-centered">
-  <div className="cyberware" style={{ height: `${now}%` }}></div>
-  <div>{label}</div>
-</div>
-
- */
