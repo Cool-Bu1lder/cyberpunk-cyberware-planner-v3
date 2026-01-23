@@ -6,7 +6,7 @@ import { skeleton } from './skeleton'
 import { hands } from './hands'
 import { nervousSystem } from './nervous-system'
 import { circulatorySystem } from './circulatory-system'
-import { integumentarySystem } from './integumentary-system'
+import { integumentarySystem } from './integumentary-system.js'
 import { legs } from './legs'
 
 export const cyberware = {
