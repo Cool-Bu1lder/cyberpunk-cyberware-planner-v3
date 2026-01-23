@@ -6,16 +6,16 @@ import CategoryLabel from './CategoryLabel'
 import SlotButton from '../../SlotButton'
 
 import { usePage } from '../../../contexts/PageContext'
-import { useData } from '../../../hooks/useData.js'
+import { useData } from '../../../contexts/DataContext'
 import { cyberware } from '../../../data/cyberware'
 
 export default function CategoryHandler({ category, side }) {
   const isRight = side === 'right'
 
   const { setPage } = usePage()
-  const [urlData] = useData()
+  const { data } = useData()
 
-  const slotIds = urlData[category.id]
+  const slotIds = data[category.id]
   const cyberwareCategory = cyberware[category.id]
 
   const cyberwareById = useMemo(() => {

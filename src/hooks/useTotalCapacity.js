@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useData } from './useData'
+import { useData } from '../contexts/DataContext'
 import { cyberwareLookUp } from '../data/cyberware'
 
 function getTotalCapacity(data) {
@@ -13,7 +12,7 @@ function getTotalCapacity(data) {
 }
 
 export function useTotalCapacity() {
-  const [data] = useData()
+  /*const { data } = useData()
 
   const [capacity, setCapacity] = useState(() => {
     return getTotalCapacity(data)
@@ -23,5 +22,7 @@ export function useTotalCapacity() {
     setCapacity(getTotalCapacity(data))
   }, [data])
 
-  return capacity
+  return capacity*/
+  const { data } = useData()
+  return getTotalCapacity(data)
 }

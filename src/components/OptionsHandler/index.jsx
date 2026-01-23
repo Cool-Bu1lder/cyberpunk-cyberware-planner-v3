@@ -1,7 +1,8 @@
 import ListLayout from '../ListLayout'
 import GridLayout from '../GridLayout'
 import { usePage } from '../../contexts/PageContext'
-import { useData, getData } from '../../hooks/useData'
+import { useData } from '../../contexts/DataContext'
+import { getData } from '../../utils/getData'
 
 import { categoriesLookUp } from '../../data/categories'
 import { cyberware, cyberwareLookUp } from '../../data/cyberware'
@@ -10,11 +11,11 @@ import SlotButton from '../SlotButton/index.jsx'
 export default function OptionsHandler() {
   const { page, setPage } = usePage()
 
-  const [urlData, setUrlData] = useData()
+  const { data, setData } = useData()
   const categoryInfo = categoriesLookUp[page]
 
   const filteredCyberware = cyberware[page].filter(
-    (item) => !urlData[page].includes(item.id),
+    (item) => !data[page].includes(item.id),
   )
 
   function equip(itemId) {
@@ -26,7 +27,7 @@ export default function OptionsHandler() {
     searchParams.set(page, currentValues + itemId)
     window.history.replaceState(null, '', '?' + searchParams.toString())
 
-    setUrlData(() => getData())
+    setData(() => getData())
   }
 
   function unequip(itemId) {
@@ -38,7 +39,7 @@ export default function OptionsHandler() {
     searchParams.set(page, currentValues.replace(itemId, ''))
     window.history.replaceState(null, '', '?' + searchParams.toString())
 
-    setUrlData(() => getData())
+    setData(() => getData())
   }
 
   return (
@@ -47,12 +48,12 @@ export default function OptionsHandler() {
         <div className={'category-selector'}>{categoryInfo.label}</div>
         <ListLayout gap={'1.5vh'} className={'equipped-container'}>
           {Array.from({ length: categoryInfo.slots }).map((_, index) => {
-            const item = cyberwareLookUp[page][urlData[page][index]] // TODO: use cyberware.find instead?
+            const item = cyberwareLookUp[page][data[page][index]] // TODO: use cyberware.find instead?
 
             return (
               <SlotButton
                 key={index}
-                onClick={() => unequip(urlData[page][index])}
+                onClick={() => unequip(data[page][index])}
               >
                 {item ? item.label : 'Empty'}
               </SlotButton>
