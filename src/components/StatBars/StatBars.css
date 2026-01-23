@@ -1,0 +1,22 @@
+.bar-container {
+  width: 6vh;
+  height: 60vh;
+
+  background: black;
+}
+
+.bar-container.left {
+  left: 5vw;
+}
+
+.bar-container.right {
+  right: 5vw;
+}
+
+.bar-container .cyberware {
+  background: yellow;
+}
+
+.bar-container .armour {
+  background: blue;
+}

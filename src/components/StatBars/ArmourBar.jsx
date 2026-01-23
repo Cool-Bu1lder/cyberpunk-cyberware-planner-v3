@@ -1,3 +1,5 @@
+import './StatBars.css'
+
 export default function ArmourBar({ now, label }) {
   return (
     <div className="bar-container right vertically-centered">

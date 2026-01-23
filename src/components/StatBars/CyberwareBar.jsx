@@ -1,3 +1,5 @@
+import './StatBars.css'
+
 export default function CyberwareBar({ now, label }) {
   return (
     <div className="bar-container left vertically-centered">
