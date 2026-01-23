@@ -6,8 +6,8 @@ import CyberwareBar from './components/StatBars/CyberwareBar'
 import ArmourBar from './components/StatBars/ArmourBar'
 
 import { usePage, PageProvider } from './contexts/PageContext'
-
 import { categories } from './data/categories'
+import { useTotalCapacity } from './hooks/useTotalCapacity'
 
 import './App.css'
 
@@ -25,6 +25,7 @@ function Pages() {
 }
 
 function App() {
+  const capacity = useTotalCapacity()
   return (
     <>
       <ModelView />
@@ -33,7 +34,7 @@ function App() {
           <Pages />
         </PageProvider>
 
-        <CyberwareBar now={50} label={50} />
+        <CyberwareBar now={capacity} label={capacity} />
         <ArmourBar now={50} label={50} />
       </FullScreenContainer>
     </>
