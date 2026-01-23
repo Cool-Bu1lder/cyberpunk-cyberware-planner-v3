@@ -1,4 +1,4 @@
-import viteLogo from '/vite.svg'
+import viteLogo from '../../assets/vite.svg'
 
 import './StatBars.css'
 
