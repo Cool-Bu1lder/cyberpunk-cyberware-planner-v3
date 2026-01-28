@@ -7,10 +7,10 @@ const bars = 10
 
 const total = groups * bars
 
-function TickRow({ fill, j, groupIndex }) {
-  const active = fill > j + groupIndex * bars
+function TickRow({ fill, rowIndex, groupIndex }) {
+  const active = fill > rowIndex + groupIndex * bars
   const activeClass = `tick ${active ? 'active' : ''}`
-  const p = fill - j - groupIndex * bars - 1
+  const p = fill - rowIndex - groupIndex * bars - 1
   const positionClass =
     p === 0 ? 'first' : p === 1 ? 'second' : p === 2 ? 'third' : ''
 
@@ -22,20 +22,16 @@ function TickRow({ fill, j, groupIndex }) {
   )
 }
 
-function TickGroup({ groupIndex, fill }) {
-  const tickRow = Array.from({ length: bars }).map((_, j) => (
-    <TickRow fill={fill} j={j} groupIndex={groupIndex} />
-  ))
-
-  return <div className="tick-row-layout">{tickRow}</div>
-}
-
 export default function CyberwareBar({ now, label }) {
   const fill = Math.floor((now / 100) * total)
 
-  const tickGroups = Array.from({ length: groups }).map((_, i) => (
-    <TickGroup group={i} fill={fill} />
-  ))
+  const tickGroups = Array.from({ length: groups }).map((_, i) => {
+    const tickRow = Array.from({ length: bars }).map((_, j) => (
+      <TickRow fill={fill} rowIndex={j} groupIndex={i} />
+    ))
+
+    return <div className="tick-row-layout">{tickRow}</div>
+  })
 
   return (
     <div className="bar-container left vertically-centered">
