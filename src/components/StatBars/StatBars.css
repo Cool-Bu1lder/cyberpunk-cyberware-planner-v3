@@ -21,16 +21,29 @@
 
   position: absolute;
   color: black;
-  background: rgb(255, 213, 66);
+
   width: 4vh;
   height: 2.5vh;
   border-radius: 0.5vh;
   bottom: 0;
-  right: -15vh;
+
   transition: bottom 1000ms ease;
+}
+
+.label.cyberware {
+  background: rgb(255, 213, 66);
+  right: -11vh;
   box-shadow:
     0 0 10px rgb(255, 94, 0),
     0 0 25px rgb(255, 94, 0);
+}
+
+.label.armour {
+  background: rgb(66, 255, 249);
+  left: -11vh;
+  box-shadow:
+    0 0 10px rgb(0, 255, 255),
+    0 0 25px rgb(0, 255, 255);
 }
 
 /* */
@@ -56,15 +69,35 @@
 .tick {
   background: lightgrey;
   height: 0.5vh;
-  width: 5vh;
-  transform-origin: left;
+
+
   transition: transform 1000ms ease 500ms;
 }
 
-.tick.active {
+/* */
+
+.tick.cyberware {
+  width: 3vh;
+  transform-origin: left;
+}
+
+.tick.cyberware.active {
   background: rgb(255, 213, 66);
 }
 
-.tick.active.first  { transform: scaleX(3); }
-.tick.active.second { transform: scaleX(2); }
-.tick.active.third  { transform: scaleX(1.5); }
+.tick.cyberware.active.first  { transform: scaleX(3); }
+.tick.cyberware.active.second { transform: scaleX(2); }
+.tick.cyberware.active.third  { transform: scaleX(1.5); }
+
+.tick.armour {
+  width: 6vh;
+  transform-origin: right;
+}
+
+.tick.armour.active {
+  background: rgb(66, 255, 249);
+}
+
+.tick.armour.active.first  { transform: scaleX(2); }
+.tick.armour.active.second { transform: scaleX(1.5); }
+.tick.armour.active.third  { transform: scaleX(1.25); }

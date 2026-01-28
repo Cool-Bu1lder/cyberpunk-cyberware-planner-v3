@@ -28,7 +28,7 @@ function Pages() {
 
 function Component() {
   const capacity = useTotalCapacity()
-  const armor = useTotalArmor()
+  const armor = 1000 //useTotalArmor()
   return (
     <>
       <PageProvider>

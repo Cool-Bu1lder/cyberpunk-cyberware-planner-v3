@@ -9,7 +9,7 @@ const total = groups * bars
 
 function TickRow({ fill, rowIndex, groupIndex }) {
   const active = fill > rowIndex + groupIndex * bars
-  const activeClass = `tick ${active ? 'active' : ''}`
+  const activeClass = `tick cyberware ${active ? 'active' : ''}`
   const p = fill - rowIndex - groupIndex * bars - 1
   const positionClass =
     p === 0 ? 'first' : p === 1 ? 'second' : p === 2 ? 'third' : ''
@@ -35,7 +35,7 @@ export default function CyberwareBar({ now, label }) {
 
   return (
     <div className="bar-container left vertically-centered">
-      <div className="label" style={{ bottom: `${now - 6}%` }}>
+      <div className="label cyberware" style={{ bottom: `${now - 6}%` }}>
         {label}
       </div>
       <img src={viteLogo} className="logo" alt="Vite logo" />
