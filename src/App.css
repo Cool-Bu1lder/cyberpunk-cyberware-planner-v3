@@ -11,8 +11,6 @@
   transform: translate(0%, -50%);
   top: 50%;
   left: 20%;
-
-  background: red;
 }
 
 .category-selector {
@@ -20,18 +18,14 @@
   height: 5vh;
 
   margin-bottom: 5vh;
-
-  background: pink;
 }
 
 .equipped-container {
   margin-bottom: 5vh;
-
-  background: green;
 }
 
 .items-container {
-  background: blue;
+
 }
 
 /* */
