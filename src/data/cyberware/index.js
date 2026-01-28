@@ -29,6 +29,7 @@ export const cyberwareLookUp = Object.keys(cyberware).reduce(
         map[obj.id] = {
           label: obj.label,
           capacity: obj.capacity,
+          icon: obj.icon,
           armor: obj.armor,
           conflicts: obj.conflicts,
           order: index,

@@ -54,6 +54,7 @@ export default function OptionsHandler() {
               <SlotButton
                 key={index}
                 onClick={() => unequip(data[page][index])}
+                icon={item ? item.icon : null}
               >
                 {item ? item.label : 'Empty'}
               </SlotButton>
@@ -67,7 +68,11 @@ export default function OptionsHandler() {
           className={'items-container'}
         >
           {filteredCyberware.map((item, index) => (
-            <SlotButton key={index} onClick={() => equip(item.id)}>
+            <SlotButton
+              key={index}
+              onClick={() => equip(item.id)}
+              icon={item ? item.icon : null}
+            >
               {item ? item.label : 'Empty'}
             </SlotButton>
           ))}

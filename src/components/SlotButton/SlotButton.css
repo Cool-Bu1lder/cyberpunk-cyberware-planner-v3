@@ -1,5 +1,11 @@
 .slot-button {
+  background: Orange;
   height: 12vh;
   width: 12vh;
-  background: Orange;
+  cursor: pointer;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
 }
