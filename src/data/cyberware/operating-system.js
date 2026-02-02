@@ -1,7 +1,5 @@
 import { icons } from '../icons.js'
 
-console.log(icons)
-
 export const operatingSystem = [
   {
     id: 'a',
