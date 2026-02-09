@@ -1,4 +1,4 @@
-import viteLogo from '../../assets/vite.svg'
+import capacityIcon from '../../assets/capacity.png'
 
 import './StatBars.css'
 
@@ -38,7 +38,7 @@ export default function CyberwareBar({ now, label }) {
       <div className="label cyberware" style={{ bottom: `${now - 6}%` }}>
         {label}
       </div>
-      <img src={viteLogo} className="logo" alt="Vite logo" />
+      <img src={capacityIcon} className="logo" alt="Vite logo" />
       <div className="tick-groups-layout">{tickGroups}</div>
     </div>
   )
