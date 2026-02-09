@@ -20,7 +20,7 @@
   justify-content: center;
 
   position: absolute;
-  color: black;
+
 
   width: 4vh;
   height: 2.5vh;
@@ -28,6 +28,12 @@
   bottom: 0;
 
   transition: bottom 1000ms ease;
+
+  font-size: 2vh;
+  color: black;
+  font-family:
+    Segoe UI Semibold,
+    sans-serif;
 }
 
 .label.cyberware {
