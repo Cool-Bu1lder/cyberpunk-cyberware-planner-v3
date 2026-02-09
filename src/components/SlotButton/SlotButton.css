@@ -3,7 +3,25 @@
   height: 12vh;
   width: 12vh;
   cursor: pointer;
-  border-color: #00ffff;
+
+  border-style: solid;
+  border-radius: 0 0 2vh 0;
+}
+
+.slot-button.full {
+  border-color: rgb(0, 128, 128);
+}
+
+.slot-button.full:hover {
+  border-color: rgb(0, 255, 255);
+}
+
+.slot-button.empty {
+  border-color: rgb(92, 15, 31);
+}
+
+.slot-button.empty:hover {
+  border-color: rgb(255, 44, 83);
 }
 
 .icon {
