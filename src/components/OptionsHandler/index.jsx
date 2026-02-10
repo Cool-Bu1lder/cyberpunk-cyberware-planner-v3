@@ -45,7 +45,11 @@ export default function OptionsHandler() {
   return (
     <>
       <div className={'options-container'}>
-        <div className={'category-selector'}>{categoryInfo.label}</div>
+        <div className={'category-selector'}>
+          <button className={'category-button left'}></button>
+          <div className={'option-label'}>{categoryInfo.label}</div>
+          <button className={'category-button right'}></button>
+        </div>
         <ListLayout gap={'1.5vh'} className={'equipped-container'}>
           {Array.from({ length: categoryInfo.slots }).map((_, index) => {
             const item = cyberwareLookUp[page][data[page][index]] // TODO: use cyberware.find instead?
