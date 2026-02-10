@@ -58,7 +58,16 @@ export default function OptionsHandler() {
             className={'category-button left'}
             onClick={() => changePage(-1)}
           ></button>
-          <div className={'option-label'}>{categoryInfo.label}</div>
+          <div className={'category-divider'}>
+            <div className={'option-label'}>{categoryInfo.label}</div>
+            <div className={'c-sm'}>
+              {Array.from({ length: categories.length }).map((_, i) => {
+                const j = categories.findIndex((item) => item.id === page)
+                const active = i === j ? 'active' : ''
+                return <div className={`i-bar ${active}`} />
+              })}
+            </div>
+          </div>
           <button
             className={'category-button right'}
             onClick={() => changePage(1)}
