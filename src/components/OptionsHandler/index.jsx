@@ -3,6 +3,7 @@ import GridLayout from '../GridLayout'
 import { usePage } from '../../contexts/PageContext'
 import { useData } from '../../contexts/DataContext'
 import { getData } from '../../utils/getData'
+import { categories } from '../../data/categories'
 
 import { categoriesLookUp } from '../../data/categories'
 import { cyberware, cyberwareLookUp } from '../../data/cyberware'
@@ -42,13 +43,26 @@ export default function OptionsHandler() {
     setData(() => getData())
   }
 
+  function changePage(increment) {
+    const i = categories.findIndex((item) => item.id === page) + increment
+    const n = categories.length
+    const p = categories[((i % n) + n) % n].id // arr[ (i % n + n) % n ]
+    setPage(p)
+  }
+
   return (
     <>
       <div className={'options-container'}>
         <div className={'category-selector'}>
-          <button className={'category-button left'}></button>
+          <button
+            className={'category-button left'}
+            onClick={() => changePage(-1)}
+          ></button>
           <div className={'option-label'}>{categoryInfo.label}</div>
-          <button className={'category-button right'}></button>
+          <button
+            className={'category-button right'}
+            onClick={() => changePage(1)}
+          ></button>
         </div>
         <ListLayout gap={'1.5vh'} className={'equipped-container'}>
           {Array.from({ length: categoryInfo.slots }).map((_, index) => {
