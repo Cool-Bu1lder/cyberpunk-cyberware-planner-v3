@@ -1,6 +1,5 @@
 /* Positioning for progress bars */
 .vertically-centered {
-  position: absolute;
   transform: translate(0%, -50%);
   top: 50%;
 }
