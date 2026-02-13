@@ -9,6 +9,8 @@ import { categoriesLookUp } from '../../data/categories'
 import { cyberware, cyberwareLookUp } from '../../data/cyberware'
 import SlotButton from '../SlotButton/index.jsx'
 
+import './OptionsHandler.css'
+
 export default function OptionsHandler() {
   const { page, setPage } = usePage()
 
