@@ -4,10 +4,10 @@
   top: 50%;
 }
 
-.stat-bar.left {
+.left {
   left: 5vw;
 }
 
-.stat-bar.right {
+.right {
   right: 5vw;
 }

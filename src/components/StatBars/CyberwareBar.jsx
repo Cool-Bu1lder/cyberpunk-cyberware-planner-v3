@@ -1,6 +1,6 @@
-import capacityIcon from '../../assets/capacity.png'
+import capacityIcon from '/src/assets/capacity.png'
 
-import './StatBars.css'
+import styles from './StatBars.module.css'
 
 const groups = 5
 const bars = 10
@@ -9,13 +9,12 @@ const total = groups * bars
 
 function TickRow({ fill, rowIndex, groupIndex }) {
   const active = fill > rowIndex + groupIndex * bars
-  const activeClass = `tick cyberware ${active ? 'active' : ''}`
+  const activeClass = `${styles.tick} ${styles.cyberware} ${active ? styles.active : ''}`
   const p = fill - rowIndex - groupIndex * bars - 1
-  const positionClass =
-    p === 0 ? 'first' : p === 1 ? 'second' : p === 2 ? 'third' : ''
+  const positionClass = `${p === 0 ? styles.first : p === 1 ? styles.second : p === 2 ? styles.third : ''}`
 
   return (
-    <div className="tick-layout">
+    <div className={`${styles['tick-layout']}`}>
       <div className={`${activeClass}`} />
       <div className={`${activeClass} ${positionClass}`} />
     </div>
@@ -23,6 +22,8 @@ function TickRow({ fill, rowIndex, groupIndex }) {
 }
 
 export default function CyberwareBar({ className, now, label }) {
+  const icon = capacityIcon || ''
+
   const fill = Math.floor((now / 100) * total)
 
   const tickGroups = Array.from({ length: groups }).map((_, i) => {
@@ -30,16 +31,19 @@ export default function CyberwareBar({ className, now, label }) {
       <TickRow fill={fill} rowIndex={j} groupIndex={i} />
     ))
 
-    return <div className="tick-row-layout">{tickRow}</div>
+    return <div className={`${styles['tick-row-layout']}`}>{tickRow}</div>
   })
 
   return (
-    <div className={`${className} stat-bar`}>
-      <div className="label cyberware" style={{ bottom: `${now - 6}%` }}>
+    <div className={`${className} ${styles['stat-bar']}`}>
+      <div
+        className={`${styles.label} ${styles.cyberware}`}
+        style={{ bottom: `${now - 6}%` }}
+      >
         {label}
       </div>
-      <img src={capacityIcon} className="logo" alt="Vite logo" />
-      <div className="tick-groups-layout">{tickGroups}</div>
+      <img src={icon} className={`${styles.logo}`} alt="Vite logo" />
+      <div className={`${styles['tick-groups-layout']}`}>{tickGroups}</div>
     </div>
   )
 }

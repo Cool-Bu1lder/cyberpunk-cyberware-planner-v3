@@ -11,7 +11,7 @@ import { categories } from './data/categories'
 import { useTotalCapacity } from './hooks/useTotalCapacity'
 import { useTotalArmor } from './hooks/useTotalArmor.js'
 
-import './App.css'
+import styles from './App.module.css'
 
 function Pages() {
   const { page } = usePage()
@@ -43,12 +43,12 @@ function Interface() {
       </PageProvider>
 
       <CyberwareBar
-        className={'left vertically-centered'}
+        className={`${styles.left} ${styles['vertically-centered']}`}
         now={capacityPercent}
         label={capacityValue}
       />
       <ArmourBar
-        className={'right vertically-centered'}
+        className={`${styles.right} ${styles['vertically-centered']}`}
         now={armourPercent}
         label={armourValue}
       />
