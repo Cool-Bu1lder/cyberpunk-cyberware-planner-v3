@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import CategoryContainer from './CategoryContainer'
 import ListLayout from '../../ListLayout'
 import CategoryLabel from './CategoryLabel'
-import SlotButton from '../../SlotButton'
+import SlotButton from '/src/components/SlotButton/SlotButton'
 
 import { usePage } from '../../../contexts/PageContext'
 import { useData } from '../../../contexts/DataContext'

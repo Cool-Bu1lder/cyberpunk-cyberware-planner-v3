@@ -7,7 +7,7 @@ import { categories } from '../../data/categories'
 
 import { categoriesLookUp } from '../../data/categories'
 import { cyberware, cyberwareLookUp } from '../../data/cyberware'
-import SlotButton from '../SlotButton/index.jsx'
+import SlotButton from '/src/components/SlotButton/SlotButton'
 
 import './OptionsHandler.css'
 
