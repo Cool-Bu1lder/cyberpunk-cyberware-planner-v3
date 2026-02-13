@@ -6,6 +6,7 @@ import emptyIcon from '../../assets/empty.webp'
 
 export default function SlotButton({ children, className, onClick, icon }) {
   const colour = icon ? styles.full : styles.empty
+  const imgSrc = icon ? icon : emptyIcon
 
   return (
     <button
@@ -13,7 +14,7 @@ export default function SlotButton({ children, className, onClick, icon }) {
       onClick={onClick}
       style={{}}
     >
-      <img src={icon || emptyIcon} className={styles.icon} alt={children} />
+      <img src={imgSrc} className={styles.icon} alt={children} />
       {children}
     </button>
   )
