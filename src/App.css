@@ -1,5 +1,14 @@
+/* Positioning for progress bars */
 .vertically-centered {
   position: absolute;
   transform: translate(0%, -50%);
   top: 50%;
+}
+
+.stat-bar.left {
+  left: 5vw;
+}
+
+.stat-bar.right {
+  right: 5vw;
 }

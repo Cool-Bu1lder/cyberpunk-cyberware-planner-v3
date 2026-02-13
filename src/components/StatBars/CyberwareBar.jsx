@@ -22,7 +22,7 @@ function TickRow({ fill, rowIndex, groupIndex }) {
   )
 }
 
-export default function CyberwareBar({ now, label }) {
+export default function CyberwareBar({ className, now, label }) {
   const fill = Math.floor((now / 100) * total)
 
   const tickGroups = Array.from({ length: groups }).map((_, i) => {
@@ -34,7 +34,7 @@ export default function CyberwareBar({ now, label }) {
   })
 
   return (
-    <div className="bar-container left vertically-centered">
+    <div className={`${className} stat-bar`}>
       <div className="label cyberware" style={{ bottom: `${now - 6}%` }}>
         {label}
       </div>

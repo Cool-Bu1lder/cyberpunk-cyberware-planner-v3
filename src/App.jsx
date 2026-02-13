@@ -26,17 +26,32 @@ function Pages() {
   )
 }
 
-function Component() {
-  const capacity = useTotalCapacity()
-  const armor = useTotalArmor()
+function Interface() {
+  const maxCapacity = 500 // TODO: move to data
+  const maxArmour = 1500
+
+  const capacityValue = useTotalCapacity()
+  const armourValue = useTotalArmor()
+
+  const capacityPercent = (capacityValue / maxCapacity) * 100
+  const armourPercent = (armourValue / maxArmour) * 100
+
   return (
     <>
       <PageProvider>
         <Pages />
       </PageProvider>
 
-      <CyberwareBar now={(capacity / 500) * 100} label={capacity} />
-      <ArmourBar now={(armor / 1500) * 100} label={armor} />
+      <CyberwareBar
+        className={'left vertically-centered'}
+        now={capacityPercent}
+        label={capacityValue}
+      />
+      <ArmourBar
+        className={'right vertically-centered'}
+        now={armourPercent}
+        label={armourValue}
+      />
     </>
   )
 }
@@ -44,12 +59,12 @@ function Component() {
 function App() {
   return (
     <>
-      <ModelView />
-      <FullScreenContainer>
-        <DataProvider>
-          <Component />
-        </DataProvider>
-      </FullScreenContainer>
+      <DataProvider>
+        <ModelView />
+        <FullScreenContainer>
+          <Interface />
+        </FullScreenContainer>
+      </DataProvider>
     </>
   )
 }
